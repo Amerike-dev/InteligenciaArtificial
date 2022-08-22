@@ -14,11 +14,12 @@ En este paradigma podemos encontrar:
     * Programación modular: Consiste en dividir un programa en módulos o subprogramas con el fin de hacerlos más manejables y legibles.
 
 * Paradigma Declarativo: No requiere definir algoritmos, este describe un problema en lugarde encontrarle una solución. Utiliza principios de razonamiento lógico para responder preguntas. Este paradigma se divide en dos:
-    * programación Lógica
-    * Programacion Funcional.
+    * programación Lógica: Expresa objetivos como una colección de afirmaciones o reglas acerca de los resuñtadoos y restricciones en lógica matematíca.
+    * Programacion Funcional: Puede crear funciones de con un orden superior, prioriza un orden recursivo y HOF para resolver problemas
 
 * Programación Orientada a Objetos: Se construyen modelos que representan elementos del problema a resolver. Permite separar los componentes de un programa, lo que ayuda a simplificar su creación, depurarlo y actualizarlo. Este paradigma disminuye los errores y proporciona que el código pueda ser reutilizado.
 Esta utiliza conceptos como: Abstraccion de datos, Encapsulación, Eventos, Modularidad, Herencia o Polimorfismo.
 
 * Programación Reactiva: El paradigma se basa en escuchar lo que emite un evento  o cambio en el flujo de datos.
+Un ejemplo de donde se encuentra este tipo de paradigma es Git, el cual funciona identificando cambios en un el repositorio.
 
