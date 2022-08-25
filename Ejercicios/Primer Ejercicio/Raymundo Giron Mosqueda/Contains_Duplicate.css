@@ -1,0 +1,19 @@
+public class Solution 
+{
+    public bool ContainsDuplicate(int[] nums) 
+    {
+
+        HashSet<int> hashSet = new HashSet<int>();
+
+        for(int i = 0; i < nums.Length; i++)
+        {
+            hashSet.Add(nums[i]);
+
+        }
+        if(nums.Length != hashSet.Count)
+        {
+            return(true);
+
+        }else {return(false);}
+    }
+}
