@@ -1,0 +1,18 @@
+public class Solution {
+    public bool ContainsDuplicate(int[] nums) {
+
+        HashSet<int> array_set = new HashSet<int>(nums);
+
+        Console.Write("Array: " + nums.Length + " array set: " + array_set.Count);
+
+        if(nums.Length == array_set.Count)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+
+    }
+}
