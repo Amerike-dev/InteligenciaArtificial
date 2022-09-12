@@ -7,3 +7,11 @@
 - Todas las tareas seran consideradas recibidas cuando se hagan merge a la rama staging.
 
 - Pueden crear las ramas que gusten, sin embargo las unicas que se consideraran sera la de staging y la main.
+
+## Primer Parcial
+Ejercicios: Primer
+Tareas: Primera y Segunda
+
+## Segundo Parcial
+Ejercicios: Segundo
+Tareas: Tercer
