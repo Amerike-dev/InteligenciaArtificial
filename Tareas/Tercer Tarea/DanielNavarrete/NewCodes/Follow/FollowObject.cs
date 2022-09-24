@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FollowObject : SteeringBehaviors
@@ -41,7 +39,10 @@ public class FollowObject : SteeringBehaviors
             FollowLeader();
             FleePlayer();
         }
-        PursuitPlayer();
+        else if(enablePursuit)
+        {
+            PursuitPlayer();
+        } 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -85,19 +86,16 @@ public class FollowObject : SteeringBehaviors
 
     void PursuitPlayer()
     {
-        if(enablePursuit)
-        {
-            this.speed = 4;
-            followEnable = false;
-            enableFlee = false;
-            enableInterval = false;
-            sprite.color = Color.red;
+        this.speed = 4f;
+        followEnable = false;
+        enableFlee = false;
+        enableInterval = false;
+        sprite.color = Color.red;
 
 
-            transform.position += Pursuit(leader.transform.position) * Time.deltaTime;
-            this.gameObject.GetComponent<CircleCollider2D>().enabled = true;
-            this.gameObject.tag = "Enemy";
-        }
+        transform.position += Pursuit(leader.transform.position) * Time.deltaTime;
+        this.gameObject.GetComponent<CircleCollider2D>().enabled = true;
+        this.gameObject.tag = "Enemy";
     }
 
 
