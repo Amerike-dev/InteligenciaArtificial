@@ -18,14 +18,14 @@ public class SpawnObjects : MonoBehaviour
     void Start()
     {
         canvas.SetActive(false);
-        numberOfEnemies = UnityEngine.Random.Range(20, 40);
+        numberOfEnemies = Random.Range(20, 40);
     }
 
     void Update()
     {
         if (collectables.Count < numberOfEnemies)
         {
-            Vector3 randomPos = new Vector3(UnityEngine.Random.Range(-20, 20), UnityEngine.Random.Range(-20, 20), 0);
+            Vector3 randomPos = new Vector3(Random.Range(-20, 20), Random.Range(-20, 20), 0);
             Spawner = Instantiate(collectable, randomPos, Quaternion.identity) as GameObject;
             Spawner.transform.parent = this.gameObject.transform;
             collectables.Add(GameObject.FindGameObjectWithTag("collectable"));
@@ -39,8 +39,8 @@ public class SpawnObjects : MonoBehaviour
 
         foreach (var followcode in GetComponentsInChildren<FollowObject>())
         {
-            if(objectInFollow >= thirdPart) followcode.enableFlee = true;
-            else if(objectInFollow < thirdPart) followcode.enableFlee = false;
+            followcode.enableFlee = false;
+            if (objectInFollow >= thirdPart) followcode.enableFlee = true;
         }
 
         twoPart = Mathf.Round(numberOfEnemies * 0.6f);
