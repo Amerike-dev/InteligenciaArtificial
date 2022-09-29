@@ -36,7 +36,8 @@ public class Collectible : SteeringObject
             _collectibleManager.Collect(gameObject);
             _rend.material.color = Color.green;
         }
-        else
+        
+        if (_collectibleManager.Collectibles.Peek() != gameObject)
         {
             mass = 1;
             target = _collectibleManager.Collectibles.Dequeue();
@@ -79,9 +80,6 @@ public class Collectible : SteeringObject
 
     public void StartChase()
     {
-        // Debug.Log("Starting chase");
-        // StopAllCoroutines();
-        // CorStartChase();
         target = GameObject.FindGameObjectWithTag("Player");
         behaviour = "pursuit";
         _isFollower = true;

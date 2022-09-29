@@ -28,11 +28,11 @@ public class SteeringBehaviours : MonoBehaviour
         Vector3 distanceVector = targetPos - transform.position;
         switch (distanceVector.magnitude)
         {
-            case float n when(n > 40):
+            case float n when(n > 10):
                 result = 0f;
                 break;
             
-            case float n when(n < 40 && n > 2f):
+            case float n when(n < 10 && n > 2f):
                  result = 5f;
                  break;
             
