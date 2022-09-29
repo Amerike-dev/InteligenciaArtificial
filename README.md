@@ -14,4 +14,4 @@ Tareas: Primera y Segunda
 
 ## Segundo Parcial
 Ejercicios: Segundo, Tercer
-Tareas: Tercer
+Tareas: Tercer, Cuarta
