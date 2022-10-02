@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-
-
 public class Recursividad : MonoBehaviour
 {
     [SerializeField] 
@@ -48,7 +46,7 @@ public class Recursividad : MonoBehaviour
         return n;
     }
     
-    int Fibonacci( int n)
+    int Fibonacci(int n)
     {
         if (n < 2) return n;
         return Fibonacci(n - 1) + Fibonacci(n - 2);
@@ -58,7 +56,6 @@ public class Recursividad : MonoBehaviour
     {
         if (index != a.Length) return CountArray(a, index + 1);
         return index;
-
     }
     
     int CalculateSum(List<int> list, int index)
