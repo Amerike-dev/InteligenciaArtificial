@@ -1,44 +1,42 @@
 using UnityEngine;
 
+
 public class FloodFill_Tile : MonoBehaviour
 {
-    private FloodFill_BoardManager _boardManager;
+
     [HideInInspector]public MeshRenderer meshRenderer;
-    [HideInInspector] public Color tileColor;
-    [HideInInspector]public int i;
-    [HideInInspector]public int j;
+    [HideInInspector] public bool filled;
+    // [HideInInspector] public bool highlighted;
     
     private void Start()
     {
         Prepare();
-        GetId();
+        meshRenderer.material.color = Color.white;
+        
     }
 
     public void Fill()
     {
+        if (filled) return;
         meshRenderer.material.color = Color.black;
+        filled = true;
 
     }
-
-    public void Flood()
-    {
-        if (i == 0 && i == _boardManager.width) return;
-        if (j == 0 && j == _boardManager.height) return;
-
-        if (_boardManager.Tiles[i + 1, j + 1].GetComponent<FloodFill_Tile>().tileColor == this.tileColor) return;
-        _boardManager.Tiles[i +1, j+1].GetComponent<FloodFill_Tile>().Fill();
-        if (_boardManager.Tiles[i - 1, j - 1].GetComponent<FloodFill_Tile>().tileColor == this.tileColor) return;
-        _boardManager.Tiles[i -1, j-1].GetComponent<FloodFill_Tile>().Fill();
-        
-    }
-
-    void GetId()
-    {
-        string[] n = name.Split(",", 2);
-        i = int.Parse(n[0]);
-        j = int.Parse(n[1]);
-
-    }
+    
+    // Tile Highlighting implementation left for later
+    // public void HighLight()
+    // {
+    //     if (filled) return;
+    //     if (highlighted)
+    //     {
+    //         meshRenderer.material.color = Color.yellow;
+    //     }
+    //
+    //     if (!highlighted)
+    //     {
+    //         meshRenderer.material.color = Color.white;
+    //     }
+    // }
 
     void Prepare()
     {
@@ -46,7 +44,6 @@ public class FloodFill_Tile : MonoBehaviour
         try
         {
             meshRenderer = GetComponent<MeshRenderer>();
-            tileColor = meshRenderer.material.color;
         }
         catch { Debug.LogWarning("Could not find meshRenderer"); }
     }
